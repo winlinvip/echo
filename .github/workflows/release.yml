@@ -34,7 +34,7 @@ jobs:
       - name: Build SRS docker image
         run: |
           echo "Release ossrs/echo:$SRS_TAG"
-          docker build --tag ossrs/echo:$SRS_TAG -f releases/Dockerfile .
+          docker build --tag ossrs/echo:$SRS_TAG -f Dockerfile .
 
       ################################################################
       # Docker hub for global user
