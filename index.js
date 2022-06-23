@@ -3,6 +3,7 @@
 const Koa = require('koa');
 const Cors = require('koa2-cors');
 const BodyParser = require('koa-bodyparser');
+const pkg = require('./package.json');
 
 // Create koa webserver.
 const app = new Koa();
@@ -16,6 +17,7 @@ app.use(BodyParser());
 // Echo client information.
 app.use(async (ctx, next) => {
   ctx.body = {
+    version: pkg.version,
     ip: ctx.request.ip,
     method: ctx.request.method,
     path: ctx.request.path,
